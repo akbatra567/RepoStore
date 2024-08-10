@@ -1,0 +1,10 @@
+# docker-compose to run whole application
+services:
+  db:
+    image: postgres:16
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: repo_store

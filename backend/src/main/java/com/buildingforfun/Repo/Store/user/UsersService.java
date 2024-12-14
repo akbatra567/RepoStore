@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UsersService {
-    public String createUser() {
+    public String createUser(UserRequestDto userRequestDto) {
+        System.out.println(userRequestDto.toString());
         return "success";
     }
 }

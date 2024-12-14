@@ -1,1 +1,12 @@
-GET http://localhost:8080/actuator
+@baseUrl = http://localhost:8080
+
+GET {{baseUrl}}/actuator
+
+###
+
+POST {{baseUrl}}/users/create
+Content-Type: application-json
+
+{
+ "firstName": "abc"
+}

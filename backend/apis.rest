@@ -8,5 +8,9 @@ POST {{baseUrl}}/users/create
 Content-Type: application-json
 
 {
- "firstName": "abc"
+ 	"firstName": "ab",
+ 	"lastName": "c",
+ 	"password": "sads",
+ 	"userName": "abc123",
+ 	"email": "abc@example.com"
 }

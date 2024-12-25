@@ -1,33 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Box, Button, FormControl, TextField } from '@mui/material'
 import './App.css'
+import axios from 'axios'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+const handleRegister = () => {
+  axios.post('http://localhost:8080/users/create', {
+    "firstName": "abc",
+    "lastName": "dasa",
+    "password": "sadsa",
+    "userName": "d1asda",
+    "email": "abc@example.com"
+  })
+}
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Box
+        component="form"
+        sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+        noValidate
+        autoComplete="off"
+      >
+        <FormControl>
+          <TextField
+            required
+            id="firstName"
+            label="First Name"
+            placeholder="First Name"
+            variant="standard"
+          />
+          <TextField
+            required
+            id="lastName"
+            label="Last Name"
+            placeholder="Last Name"
+            variant="standard"
+          />
+          <TextField
+            required
+            type='password'
+            id="password"
+            label="Password"
+            placeholder="Password"
+            variant="standard"
+          />
+          <TextField
+            required
+            id="userName"
+            label="Username"
+            placeholder="Username"
+            variant="standard"
+          />
+          <TextField
+            required
+            type='email'
+            id="email"
+            label="Email"
+            placeholder="Email"
+            variant="standard"
+          />
+
+          <Button variant="text" onClick={handleRegister}>Register</Button>
+        </FormControl>
+      </Box>
     </>
   )
 }
